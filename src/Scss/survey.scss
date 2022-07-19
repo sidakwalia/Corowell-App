@@ -1,0 +1,173 @@
+.main-page{
+    padding: 0 !important;
+    .container{
+        padding: 0;
+        .section-page{
+            max-width: 600px;
+            margin: auto;
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+            position: relative;
+            .survey-page{
+                padding: 0;
+                h4{
+                    color: $HighlightSecondary;
+                    text-align: center;
+                    font-size: 18px;
+                    margin-bottom: 1.4rem;
+                }
+                h6{
+                    font-size: 20px;
+                    font-weight: 500;
+                    padding-left: 1rem;
+                    margin-bottom: 1rem;
+                }
+                form{ 
+                    .section-scent {
+                        .form-check-input[type=radio]{
+                            display: block;
+                            position: absolute;
+                            right: 1rem;
+                            background-color: transparent;
+                            border: none;
+                            border-radius: 0;
+                            top: 0;
+                            bottom: 0;
+                            margin: auto;
+                            background-size: 30px;
+                            width: 30px;
+                            height: 30px;
+                            &:focus{
+                                outline: none;
+                                box-shadow: none;
+                            }
+                        }
+                        label{
+                            display: flex;
+                            padding-left: 1rem; 
+                            padding-top: .7rem;
+                            padding-bottom: .7rem;
+                            transition: all .5s;
+                            color: $TextParagraph;
+                        }
+                        .form-check{
+                            padding-left: 0;
+                            position: relative;
+                            border-bottom: 1px solid $BorderPrimary;
+                            margin-bottom: 0;
+                        }
+                        .form-check-input:checked[type=radio]{
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' style='fill:%23fff;transform: ;msFilter:;'%3E%3Cpath d='m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z'%3E%3C/path%3E%3C/svg%3E");
+                            & ~ label{
+                                background-color: $HighlightPriamry;
+                                color: #fff;
+                                padding-left: 1.4rem;
+                                font-size: 16px;
+                                transition: all .5s;
+                            }
+                        }
+                    }
+                    .section-questions{
+                        padding-bottom: 5rem;
+                        div.questions{
+                            border-bottom: 1px solid $BorderPrimary;
+                            padding-bottom: 1rem;
+                            padding-top: 1rem;
+                            p{
+                            padding: 0 1rem;
+                            color: $TextParagraph;
+                            }
+                            .form-check-inline{
+                                padding-left: 1rem;
+                                input{
+                                    display: none; 
+                                }
+                                label{
+                                    border:2px solid $HighlightSecondary;
+                                    width: 100px;
+                                    height: 42px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    border-radius: 25px;
+                                    font-weight: 500;
+                                }
+                                .form-check-input:checked[type=radio]{
+                                    & ~ label{
+                                        background-color: $HighlightSecondary;
+                                        color: #fff;
+                                    }
+                                }
+                                &.invert{
+                                    label{
+                                        
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                    button{
+                        width: 92%;
+                        margin: auto;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        bottom: 1rem;
+                        left: 0;
+                        right: 0;
+                        z-index: 10;
+                    }
+                }
+            }
+            .result-page{
+                padding: 0;
+                h5{
+                    color: $HighlightSecondary;
+                    text-align: center;
+                    font-size: 18px;
+                    margin-bottom: 0;
+                    font-weight: 700;
+                }
+                .badges{
+                    margin-top: -25px;
+                    text-align: center;
+                    img.badge-coro{
+                        top: 30px;
+                        width: 140px;
+                        position: relative;
+                    }
+                    h4{
+                        color: #fff;
+                        font-weight: 400;
+                        background-color: $HighlightPriamry;
+                        font-size: 30px;
+                        padding: 2rem 0 0.8rem;
+                        margin-bottom: 1.5rem;
+                    }
+                    .result-info{
+                        margin-bottom: 1.5rem;
+                        label{
+                            color: $TextParagraph;
+                            font-weight: 500;
+                            font-size: 15px;
+                        }
+                        h3{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-top: .3rem;
+                            color: $HighlightSecondary;
+                            font-weight: 500;
+                            font-size: 30px;
+                            img{
+                                margin-right: 6px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
