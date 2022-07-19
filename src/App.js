@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import { Col, Container, Form, Row } from 'react-bootstrap';
-import ComInput from './Components/ComInput';
-import QRCode from "qrcode.react";
+import ComInput from './Components/ComInput'; 
 import ComButton from './Components/ComButton';
 import { Link } from 'react-router-dom';
 const App = () => {
@@ -9,8 +8,7 @@ const App = () => {
     <Container fluid className='auth-page'>
       <Container>
         <Row>
-          <Col lg={4} md={4} className="auth-page-qr">
-          <QRCode value="http://localhost:3000/survey" />
+          <Col lg={4} md={4} className="auth-page-qr"> 
           <hr className='d-md-none' />
           </Col>
           <Col lg={8} md={8}>

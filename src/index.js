@@ -8,6 +8,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Survey from './Screens/Survey';
 import Register from './Screens/Auth/register';
 import Result from './Screens/Result';
+import Scanner from './Screens/Scanner';
 const root = ReactDOM.createRoot(document.getElementById('corowell'));
 root.render(
   <BrowserRouter>
@@ -16,6 +17,7 @@ root.render(
       <Route path="/register" element={<Register />} />
       <Route path="/survey" element={<Survey />} />
       <Route path="/result" element={<Result />} />
+      <Route path="/scanner" element={<Scanner />} />
     </Routes>
     </BrowserRouter>
 );
