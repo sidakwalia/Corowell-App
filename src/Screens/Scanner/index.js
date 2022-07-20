@@ -19,10 +19,36 @@ const Scanner = (props) => {
             let bodyString = {"sn": "C10012000004D", "sig": "DOHZXGGT", "v": 2, "ri": "fbff"}
              console.log(bodyString)            
              postData(`${urls.GetScentApi}?sn=C10012000004D&ln=en&av=0.1`,bodyString).then((result) => {    
-              if (CheckResponseWM(result)) {  
-                    console.log(result)      
-                    
-                    }
+              let resultData ={
+                "keys": [
+                    "lavender",
+                    "lavender",
+                    "orange",
+                    "watermelon",
+                    "strawberry",
+                    "peach",
+                    "lemon",
+                    "cardamom",
+                    "dill",
+                    "rose"
+                ],
+                "values": [
+                    "lavender",
+                    "Lavender",
+                    "Orange",
+                    "Watermelon",
+                    "Strawberry",
+                    "Peach",
+                    "Lemon",
+                    "Cardamom",
+                    "Dill",
+                    "Rose"
+                ]
+            }
+              console.log(result)
+              // if (!!result) {   
+              //   navigate('/survey',{state:{resultData,bodyString},status:{bodyString}});
+              //   }
             })
         }
     }

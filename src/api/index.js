@@ -7,8 +7,10 @@ export const RequestHeaders = {
     authHeaders: () => {
         return {
             'Content-Type': 'application/json',
-            'Authorizations': `Bearer ${localStorage.getItem('active')}`,
-            'Access-Control-Allow-Credentials': '*',
+            'Accept': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': "*",
+            "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
         }
     },
     comAuthHeaders: () => {
