@@ -42,16 +42,9 @@ const Email = localStorage.getItem("email_id");
           case 'Qus5': return setQus5(value) 
           case 'Qus6': return setQus6(value) 
           console.log(Qus1)
-      }
-      console.log(Qus1)
-  }
-
-    const handleResult = () => {
-      // let formdata = new FormData();;
-      // formdata.append('name', ItemName.Value);
-      // formdata.append('restaurant_id', RestaurantData.id);
-      // formdata.append('description', ItemDescription.Value);
-      // formdata.append('is_discounted', !!IsDiscountedPrice ? 1 : 0);
+      } 
+  } 
+    const handleResult = () => { 
       let formData ={
         "card": ticketData,
         "userAnswers": {
@@ -254,8 +247,7 @@ const Email = localStorage.getItem("email_id");
                     </div>  
                 </div>
                 <ComButton Type='button' Name='Continue' Disabled={ Qus1 == 0 && Qus2 == 0 && Qus3 == 0 && Qus4 == 0 && Qus6 == 0 && 'disabled'} onClick={handleResult} />
-          </>
-                
+              </>     
             } 
               </Form>
           </Col>

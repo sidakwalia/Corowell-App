@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Col, Container, Form, Row } from 'react-bootstrap';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { RegisterRequest } from '../../api';
 import urls from '../../api/urls';
 import ComButton from '../../Components/ComButton';
@@ -8,6 +8,7 @@ import ComInput from '../../Components/ComInput';
 import { CheckResponseWM } from '../../Helpers/CheckResponse';
 import { CheckValidations, EmailValidation, PasswordValidation } from '../../Helpers/Validators';
 const Register = () => {
+  const navigate = useNavigate();
     const [UserName, setUserName] = useState({ Value: '', IsError: false, ErrorMessage: '' })
     const [EmailId, setEmailId] = useState({ Value: '', IsError: false, ErrorMessage: '' })
     const [Password, setPassword] = useState({ Value: '', IsError: false, ErrorMessage: '' })
@@ -38,7 +39,9 @@ const Register = () => {
       RegisterRequest(urls.RegisterApi, body).then((result) => {            
               if (CheckResponseWM(result)) {
                   if (result.status_code == 200) {
-                    return <Navigate to='/scanner' />
+                    localStorage.setItem("user_name", JSON.stringify(UserName.Value));
+                    localStorage.setItem("email_id", JSON.stringify(EmailId.Value));
+                    return navigate('/scanner',{state:{}});
                   }
               }
           })

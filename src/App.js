@@ -16,6 +16,14 @@ const App = (props) => {
   // }
   const navigate = useNavigate();
   
+  useEffect(() => {
+    if (localStorage.getItem("email_id") === null) {
+      
+    }
+    else{
+      navigate('/scanner',{state:{}}); 
+    }
+}, []);
   const [UserName, setUserName] = useState({ Value: '', IsError: false, ErrorMessage: '' })
     const [Password, setPassword] = useState({ Value: '', IsError: false, ErrorMessage: '' })
     const [EmailId, setEmailId] = useState({ Value: '', IsError: false, ErrorMessage: '' })

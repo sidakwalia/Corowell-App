@@ -1,1 +1,1 @@
-export default 'https://app.fadean.com/'
+export default 'https://login-backend.niander.com/api/cornwell/'
