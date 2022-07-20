@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Col, Container, Form, Image, Row } from 'react-bootstrap'; 
 import Header from '../../Components/Header';
-import { QrReader } from 'react-qr-reader';
+// import { QrReader } from 'react-qr-reader';
 import { useLocation, useNavigate } from 'react-router';
 import { postData } from '../../api';
 import urls from '../../api/urls';
@@ -46,9 +46,7 @@ const Scanner = (props) => {
                 ]
             }
               console.log(result)
-              // if (!!result) {   
-              //   navigate('/survey',{state:{resultData,bodyString},status:{bodyString}});
-              //   }
+              
             })
         }
     }
@@ -59,7 +57,7 @@ const Scanner = (props) => {
     <Container fluid className='main-page'>
         <Header />
       <Container>
-      <div style={{marginTop:30}}>
+      {/* <div style={{marginTop:30}}>
       <QrReader 
       constraints={{
         facingMode: 'environment'
@@ -77,7 +75,7 @@ const Scanner = (props) => {
         style={{ width: '100%' }}
       />
             </div> 
-            <p>{JSON.stringify(Data)}</p>
+            <p>{JSON.stringify(Data)}</p> */}
       </Container>
     </Container>
   );

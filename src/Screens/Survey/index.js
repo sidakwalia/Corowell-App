@@ -208,7 +208,7 @@ const Email = localStorage.getItem("email_id");
                         <div className='d-flex justify-content-between'>
                         <Form.Group as={Row} className="w-100 justify-content-center">
                           <Col xs="9">
-                            <RangeSlider
+                            <Form.Range
                               value={Qus5}
                               min="0"
                               max="10"
