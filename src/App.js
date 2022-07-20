@@ -10,10 +10,10 @@ import { CheckResponseWM } from './Helpers/CheckResponse';
 import ConvertFormData from './Helpers/ConvertFormData';
 const App = (props) => {
   console.log(props);
-  const saved = localStorage.getItem("user_name");
-  if(!!saved){
-    navigate('/scanner');
-  }
+  // const saved = localStorage.getItem("user_name");
+  // if(!!saved){
+  //   navigate('/scanner');
+  // }
   const navigate = useNavigate();
   const [UserName, setUserName] = useState({ Value: '', IsError: false, ErrorMessage: '' })
     const [Password, setPassword] = useState({ Value: '', IsError: false, ErrorMessage: '' })
@@ -33,6 +33,7 @@ const App = (props) => {
     
     const handleLogin = () => {
       if (CheckValidations([
+          // EmailValidation(EmailId, setEmailId), 
           PasswordValidation(Password, setPassword)
       ])){
         let body = {
