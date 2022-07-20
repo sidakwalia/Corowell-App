@@ -18,7 +18,7 @@ const Scanner = (props) => {
             //  let bodyString = JSON.stringify(body)
             let bodyString = {"sn": "C10012000004D", "sig": "DOHZXGGT", "v": 2, "ri": "fbff"}
              console.log(bodyString)            
-             postData(`${urls.GetScentApi}?sn=C10012000004D&ln=en&av=0.1`,bodyString).then((result) => {    
+             postData(`${urls.SetScentApi}`,bodyString).then((result) => {    
               let resultData ={
                 "keys": [
                     "lavender",
