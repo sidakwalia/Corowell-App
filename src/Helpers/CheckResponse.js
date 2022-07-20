@@ -11,7 +11,7 @@ export default (response = false, message = false) => {
 }
 export const CheckResponseWM = (result = false, message = false) => {
     if (!!result && result.status_code == 200) { toastr.success(!!result && !!result.data ? result.data : 'Success'); return true }
-    else { toastr.error(!!result && !!result.message ? result.message : !!message ? message : 'Something went wrong'); return false }
+    else { toastr.error(!!result.data ? result.data : 'Something went wrong'); return false }
 }
 export const CheckResponseFWM = (result = false, message = false) => {
     if (!!result && !!result.status) { toastr.success(!!result && !!result.message ? result.message : 'Congratulations! We are so HAPPY to HAVE YOU on board!'); return true }

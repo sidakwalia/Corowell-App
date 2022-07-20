@@ -10,11 +10,12 @@ import { CheckResponseWM } from './Helpers/CheckResponse';
 import ConvertFormData from './Helpers/ConvertFormData';
 const App = (props) => {
   console.log(props);
-  const saved = localStorage.getItem("user_name");
-  if(!!saved){
-    navigate('/scanner');
-  }
+  // const saved = localStorage.getItem("user_name");
+  // if(!!saved){
+  //   navigate('/scanner');
+  // }
   const navigate = useNavigate();
+  
   const [UserName, setUserName] = useState({ Value: '', IsError: false, ErrorMessage: '' })
     const [Password, setPassword] = useState({ Value: '', IsError: false, ErrorMessage: '' })
     const [EmailId, setEmailId] = useState({ Value: '', IsError: false, ErrorMessage: '' })
@@ -33,6 +34,7 @@ const App = (props) => {
     
     const handleLogin = () => {
       if (CheckValidations([
+          // EmailValidation(EmailId, setEmailId), 
           PasswordValidation(Password, setPassword)
       ])){
         let body = {
@@ -40,11 +42,20 @@ const App = (props) => {
           user_name: UserName.Value,
           password: Password.Value,
       }
-          LoginRequest(urls.LoginApi, body).then((result) => {            
+          LoginRequest(urls.LoginApi, body).then((result) => {    
+            if (CheckResponseWM(result)) {        
                   if (result.status_code == 200) {
                     localStorage.setItem("user_name", JSON.stringify(UserName.Value));
                     localStorage.setItem("email_id", JSON.stringify(EmailId.Value));
-                    navigate('/scanner');
+                    if(!!result.result){
+                      const body = result.result;
+                      console.log(result.result)
+                      navigate('/result',{state:{body}});  
+                    }
+                    else{
+                      navigate('/scanner',{state:{}});
+                    }
+                  }
                   }
           })
       }
@@ -53,11 +64,8 @@ const App = (props) => {
   return (
     <Container fluid className='auth-page'>
       <Container>
-        <Row>
-          <Col lg={4} md={4} className="auth-page-qr"> 
-          <hr className='d-md-none' />
-          </Col>
-          <Col lg={8} md={8}>
+        <Row> 
+          <Col lg={12} md={12}>
             <div className='auth-page-box'>
               <h3>Sign In</h3>
               <p>New User? <Link to="/register">Create an account</Link></p>
