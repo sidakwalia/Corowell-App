@@ -12,12 +12,12 @@ import Scanner from './Screens/Scanner';
 const root = ReactDOM.createRoot(document.getElementById('corowell'));
 root.render(
   <BrowserRouter>
-            <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/survey" element={<Survey />} />
-      <Route path="/result" element={<Result />} />
-      <Route path="/scanner" element={<Scanner />} />
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/survey" element={<Survey />} />
+        <Route path="/result" element={<Result />} />
+        <Route path="/scanner" element={<Scanner />} />
     </Routes>
     </BrowserRouter>
 );

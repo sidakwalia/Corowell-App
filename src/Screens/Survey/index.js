@@ -58,7 +58,7 @@ const Survey = () => {
                 <h4>Self Assessment</h4> 
                 <div className="section-questions">
                     <div className='questions'> 
-                        <p>Do you suffer from Covid19-typical symptoms of the disease - such as fever, cough and shortness of breath? </p>
+                        <p>Have you been tested "positive" for a COVID-19 infection in the last 10 days?</p>
                         <div className='d-flex justify-content-between'>
                         <Form.Check
                         inline 
@@ -79,7 +79,7 @@ const Survey = () => {
                         </div>
                     </div> 
                     <div className='questions'> 
-                        <p>Do you suffer from Covid19-typical symptoms of the disease - such as fever, cough and shortness of breath? </p>
+                        <p>Have you been in contact with a confirmed suspected or infected person in the last 7 days?</p>
                         <div className='d-flex justify-content-between'>
                         <Form.Check
                         inline 
@@ -100,7 +100,7 @@ const Survey = () => {
                         </div>
                     </div> 
                     <div className='questions'> 
-                        <p>Do you suffer from Covid19-typical symptoms of the disease - such as fever, cough and shortness of breath? </p>
+                        <p>Do you suffer from fever, cough, shortness of breath, sore throat, unusual fatigue, or muscular pain?</p>
                         <div className='d-flex justify-content-between'>
                         <Form.Check
                         inline 
@@ -121,7 +121,7 @@ const Survey = () => {
                         </div>
                     </div> 
                     <div className='questions'> 
-                        <p>Do you suffer from Covid19-typical symptoms of the disease - such as fever, cough and shortness of breath? </p>
+                        <p>Did you have a recent smell disorder?</p>
                         <div className='d-flex justify-content-between'>
                         <Form.Check
                         inline 
@@ -142,7 +142,7 @@ const Survey = () => {
                         </div>
                     </div>
                     <div className='questions'> 
-                        <p>Do you suffer from Covid19-typical symptoms of the disease - such as fever, cough and shortness of breath? </p>
+                        <p>Please rate your ability to detect the scent on the Corowell ticket on a scale of 0 to 10, "0" being impossible to "10" being very easily.</p>
                         <div className='d-flex justify-content-between'>
                         <Form.Check
                         inline 
@@ -163,7 +163,7 @@ const Survey = () => {
                         </div>
                     </div>
                     <div className='questions'> 
-                        <p>Do you suffer from Covid19-typical symptoms of the disease - such as fever, cough and shortness of breath? </p>
+                        <p>I have truthfully answered all questions</p>
                         <div className='d-flex justify-content-between'>
                         <Form.Check
                         inline 
@@ -182,28 +182,7 @@ const Survey = () => {
                         />
 
                         </div>
-                    </div>
-                    <div className='questions'> 
-                        <p>Do you suffer from Covid19-typical symptoms of the disease - such as fever, cough and shortness of breath? </p>
-                        <div className='d-flex justify-content-between'>
-                        <Form.Check
-                        inline 
-                        type="radio"
-                        name="q7"
-                        id="g-q7-1"
-                        label="Yes"
-                        />
-                        <Form.Check
-                        className='invert'
-                        inline 
-                        type="radio"
-                        name="q7"
-                        id="g-q7-2"
-                        label="No"
-                        />
-
-                        </div>
-                    </div>
+                    </div>  
                 </div>
                 <Link to="/result"><ComButton Type='button' Name='Continue' /> </Link>
           </>

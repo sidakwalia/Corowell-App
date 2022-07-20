@@ -18,6 +18,9 @@ const Scanner = () => {
       <Container>
       <div style={{marginTop:30}}>
       <QrReader
+      constraints={{
+        facingMode: 'environment'
+    }}
         onResult={(result, error) => {
           if (!!result) {
             setData(result?.text);
