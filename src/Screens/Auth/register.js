@@ -54,7 +54,7 @@ const Register = () => {
               <h3>Sign Up</h3>
               <p>Already have an account? <Link to="/">Sign In</Link></p>
               <Form>
-              <ComInput Error={UserName.IsError} ErrorMessage={UserName.ErrorMessage} Value={UserName.Value} onChange={(e) => HandleFormChange(e)} Type="email" Name="UserName" Placeholder="Enter Email" />
+              <ComInput Error={UserName.IsError} ErrorMessage={UserName.ErrorMessage} Value={UserName.Value} onChange={(e) => HandleFormChange(e)} Type="email" Name="UserName" Placeholder="Enter User name" />
               <ComInput Error={EmailId.IsError} ErrorMessage={EmailId.ErrorMessage} Value={EmailId.Value} onChange={(e) => HandleFormChange(e)} Type="email" Name="EmailId" Placeholder="Enter Email" />
               <ComInput Error={Password.IsError} ErrorMessage={Password.ErrorMessage} Value={Password.Value} onChange={(e) => HandleFormChange(e)} Type="password" Name="Password" Placeholder="Enter password" />                            
               <ComButton onClick={(e) => handleSignup(e)} Type="button" Name="Sign Up" />

@@ -3,8 +3,8 @@ import { Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ComButton from '../../Components/ComButton';
 import Header from '../../Components/Header';
-const Survey = () => {
-
+const Survey = (props) => {
+console.log(props);
     const [SurveyScent, setSurveyScent] = useState(true);
     const surveyNext = () => setSurveyScent(false);
 
