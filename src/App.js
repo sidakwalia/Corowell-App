@@ -33,7 +33,6 @@ const App = (props) => {
     
     const handleLogin = () => {
       if (CheckValidations([
-          // EmailValidation(EmailId, setEmailId), 
           PasswordValidation(Password, setPassword)
       ])){
         let body = {
