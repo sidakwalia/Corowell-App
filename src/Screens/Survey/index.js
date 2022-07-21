@@ -11,7 +11,7 @@ import { CheckResponseWM } from '../../Helpers/CheckResponse';
 const Survey = (props) => {
   const navigate = useNavigate();
 const location = useLocation();
-const surveyData = location.state.resultData;
+const surveyData = location.state.result;
 const ticketData = location.state.bodyString;
 const UserName = localStorage.getItem("user_name");
 const Email = localStorage.getItem("email_id");
@@ -24,13 +24,7 @@ const Email = localStorage.getItem("email_id");
     const [ Qus5, setQus5 ] = useState(0);
     const [ Qus6, setQus6 ] = useState(0);
     const surveyNext = () => setSurveyScent(false);
-    // const HandleFormChange = ({ target = {} }) => {
-    //   let { name = '', value = '' } = target;
-    //   switch (name) {
-    //     case 'Scent': return setNewDataNotes(i => ({ ...i, Value: value, IsError: false, ErrorMessage: '' }))
-    //     case 'NewDate': return setNewDate(value) 
-    //   }
-    // }
+
     const HandleFormChange = ({ target = {} }) => {
       let { name = '', value = '' } = target;
       switch (name) {
@@ -44,31 +38,38 @@ const Email = localStorage.getItem("email_id");
           console.log(Qus1)
       } 
   } 
-    const handleResult = () => { 
-      let formData ={
-        "card": ticketData,
+    const handleResult = () => {  
+    console.log(JSON.parse(ticketData));
+        let dataResult = {
+          "card": {
+            "ri": JSON.parse(ticketData).ri,
+            "sig":JSON.parse(ticketData).sig,
+            "sn": JSON.parse(ticketData).sn,
+            "v": JSON.parse(ticketData).v
+        },
         "userAnswers": {
-            "scentFeedback": ScentFeedback,
+            "scentFeedback":ScentFeedback,
             "survey": {
                 "q1": Qus1,
-                "q2": Qus2,
+                "q2":Qus2,
                 "q3": Qus3,
                 "q4": Qus4,
-                "q5": Qus5,
+                "q5": parseInt(Qus5),
                 "q6": Qus6
             }
         },
-        "userName": JSON.parse(UserName),
-        "email_id": JSON.parse(Email)
-    }
-    console.log(formData);
-      postData(urls.GenerateTestApi,formData).then((result) => {    
-        if (CheckResponseWM(result)) {         
-        console.log(result)
+        "userName": UserName,
+        "email_id": Email
+      };
+      postData(urls.GenerateTestApi,dataResult).then((result) => {    
+        if (CheckResponseWM(result)) {        
         if (result.status_code==200) {   
           navigate('/result',{state:{result}});
           }
-        }
+        } 
+        else{ 
+          navigate('/scanner',{state:{}}); 
+          }
       })
     } 
   return (
