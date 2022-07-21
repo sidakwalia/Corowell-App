@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Col, Container, Form, Image, Row } from 'react-bootstrap'; 
 import Header from '../../Components/Header';
-// import { QrReader } from 'react-qr-reader';
+import { QrReader } from 'react-qr-reader';
 import { useLocation, useNavigate } from 'react-router';
 import { postData } from '../../api';
 import urls from '../../api/urls';
@@ -15,38 +15,12 @@ const Scanner = (props) => {
         if (!!data) { 
              setData(data)
              let body = JSON.parse(JSON.stringify(eval("(" + data + ")"))); 
-            //  let bodyString = JSON.stringify(body)
-            let bodyString = {"sn": "C10012000004D", "sig": "DOHZXGGT", "v": 2, "ri": "fbff"}
+             let bodyString = JSON.stringify(body)
              console.log(bodyString)            
              postData(`${urls.SetScentApi}`,bodyString).then((result) => {    
-              let resultData ={
-                "keys": [
-                    "lavender",
-                    "lavender",
-                    "orange",
-                    "watermelon",
-                    "strawberry",
-                    "peach",
-                    "lemon",
-                    "cardamom",
-                    "dill",
-                    "rose"
-                ],
-                "values": [
-                    "lavender",
-                    "Lavender",
-                    "Orange",
-                    "Watermelon",
-                    "Strawberry",
-                    "Peach",
-                    "Lemon",
-                    "Cardamom",
-                    "Dill",
-                    "Rose"
-                ]
-            }
-              console.log(result)
-              
+              if (!!result) {   
+                navigate('/survey',{state:{result,bodyString}});
+                }
             })
         }
     }
@@ -57,7 +31,7 @@ const Scanner = (props) => {
     <Container fluid className='main-page'>
         <Header />
       <Container>
-      {/* <div style={{marginTop:30}}>
+      <div style={{marginTop:30}}>
       <QrReader 
       constraints={{
         facingMode: 'environment'
@@ -75,7 +49,7 @@ const Scanner = (props) => {
         style={{ width: '100%' }}
       />
             </div> 
-            <p>{JSON.stringify(Data)}</p> */}
+            <p>{JSON.stringify(Data)}</p>
       </Container>
     </Container>
   );

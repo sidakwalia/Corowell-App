@@ -6,11 +6,13 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 const Result = (props) => { 
     const location = useLocation();
     const navigate = useNavigate();
-    console.log(location.state);
-    const body =location.state;
+    
+    const body = !!location.state.body ? location.state.body : location.state.result;
+    const dataFinal = body;
     const handleTest = () => {
         navigate('/scanner',{state:{body}}); 
     }
+    console.log(location.state.body )
   return (
     <Container fluid className='main-page'>
         <Header />
@@ -20,15 +22,15 @@ const Result = (props) => {
            <h5>Show Pass</h5>
            <div className='badges'>
            <Image width="100" className='badge-coro' src={`${process.env.PUBLIC_URL}/pass-badge.png`} />
-           <h4>{location.state.body.covid_results ? "Passed: All Clear" : "Failed"}</h4>
+           <h4>{dataFinal.covid_results == "pass" ? "Passed: All Clear" : "Failed"}</h4>
            <div className='result-info'>
                 <label>NAME</label>
-                <h3><Image src={`${process.env.PUBLIC_URL}/user.svg`} /> {location.state.body.patient_name}</h3>
+                <h3><Image src={`${process.env.PUBLIC_URL}/user.svg`} /> {dataFinal.patient_name}</h3>
            </div>
            <div className='result-info'>
                 <label>ISSUED ON</label>
-                <h3><Image src={`${process.env.PUBLIC_URL}/time.svg`} /> {location.state.body.time_of_test.split(' ')[3]}</h3>
-                <h3><Image src={`${process.env.PUBLIC_URL}/calendar.svg`} /> {location.state.body.time_of_test.split(',')[0]}</h3>
+                <h3><Image src={`${process.env.PUBLIC_URL}/time.svg`} /> {dataFinal.time_of_test.split(' ')[3]}</h3>
+                <h3><Image src={`${process.env.PUBLIC_URL}/calendar.svg`} /> {dataFinal.time_of_test.split(',')[0]}</h3>
            </div>
            </div>
            <div className='test-button'>
