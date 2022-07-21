@@ -132,20 +132,35 @@
                     font-weight: 700;
                 }
                 .badges{
-                    margin-top: -25px;
+                    margin-top:15px;
                     text-align: center;
+                    div.passed{
+                        margin-top: 2rem;
+                        p{
+                            justify-content: end;
+                            padding-right: 2rem;
+                            display: flex;
+                        }
+
                     img.badge-coro{
-                        top: 30px;
-                        width: 140px;
-                        position: relative;
+                        top: 22px;
+                        width: 120px;
+                        position: absolute;
+                        left: 0;
+                    }
                     }
                     h4{
                         color: #fff;
                         font-weight: 400;
                         background-color: $HighlightPriamry;
-                        font-size: 30px;
-                        padding: 2rem 0 0.8rem;
+                        font-size: 22px;
+                        font-weight: bold;
+                        padding: 1rem 0 0.8rem;
                         margin-bottom: 1.5rem;
+                        &.bg-error{
+                            background-color:#dc3545;
+                            padding: 3rem 0 0.8rem;
+                        }
                     }
                     .result-info{
                         margin-bottom: 1.5rem;
