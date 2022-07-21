@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Col, Container, Form, Row } from 'react-bootstrap';
+import { Col, Container, Form, Image, Row } from 'react-bootstrap';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { RegisterRequest } from '../../api';
 import urls from '../../api/urls';
@@ -54,6 +54,7 @@ const Register = () => {
         <Row>
           <Col lg={12} md={12}>
             <div className='auth-page-box'>
+            <Image width="150" src={`${process.env.PUBLIC_URL}/logo.png`} className="mb-4 mx-auto d-flex align-items-center justify-content-center" />
               <h3>Sign Up</h3>
               <p>Already have an account? <Link to="/">Sign In</Link></p>
               <Form>

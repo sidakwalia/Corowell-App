@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Col, Container, Form, Row } from 'react-bootstrap';
+import { Col, Container, Form, Image, Row } from 'react-bootstrap';
 import ComInput from './Components/ComInput'; 
 import ComButton from './Components/ComButton';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
@@ -75,6 +75,7 @@ const App = (props) => {
         <Row> 
           <Col lg={12} md={12}>
             <div className='auth-page-box'>
+            <Image width="150" src={`${process.env.PUBLIC_URL}/logo.png`} className="mb-4 mx-auto d-flex align-items-center justify-content-center" />
               <h3>Sign In</h3>
               <p>New User? <Link to="/register">Create an account</Link></p>
               <Form>
