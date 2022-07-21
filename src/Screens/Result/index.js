@@ -51,7 +51,11 @@ const Result = (props) => {
            </div>
            </> : <>
            <div className='badges'>
-           <Image width="100%" className='w-100' src={`${process.env.PUBLIC_URL}/doctor.jpg`} />
+
+<h4>COVID-19 Symptom<br />
+                Screening Test</h4>
+
+           
            <h4 className='bg-error'>Sorry, you did not pass</h4>
             <p>Unfortunately, you did not pass the <br />
             Corowell-Test
@@ -59,6 +63,7 @@ const Result = (props) => {
             <p>This could be an indication of a<br />
             COVID-19 infection.
             </p>
+<p> Please go get a confirmatory test to verify infection</p>
            </div>
            </>
           }
