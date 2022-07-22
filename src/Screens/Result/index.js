@@ -57,8 +57,8 @@ const Result = (props) => {
 
            
            <h4 className='bg-error'>Sorry, you did not pass</h4>
-            <p>Unfortunately, you did not pass the <br />
-            Corowell-Test
+            <p>Unfortunately you did not pass the <br />
+            COVID-19 Symptom Screening Test
             </p>
             <p>This could be an indication of a<br />
             COVID-19 infection.
