@@ -10,6 +10,8 @@ const Scanner = (props) => {
     const location = useLocation();
     const navigate = useNavigate();
     console.log(location);
+    const symptoms = JSON.parse(!!sessionStorage.symptoms ? sessionStorage.symptoms : null);
+    const UserInfo = JSON.parse(!!sessionStorage.result ? sessionStorage.result : null);
     const [Data, setData] = useState({});
     const handleScan = data => {
         if (!!data) { 
@@ -18,9 +20,14 @@ const Scanner = (props) => {
              let bodyString = JSON.stringify(body)
              console.log(bodyString)            
              postData(`${urls.SetScentApi}`,bodyString).then((result) => {    
-              if (!!result) {   
+              if (!!result) {  
+                if(result.message == "Network Error") {
+                  navigate('/scanner');
+                }
+                else{ 
                 navigate('/survey',{state:{result,bodyString}});
                 }
+              }
             })
         }
     }
@@ -31,7 +38,7 @@ const Scanner = (props) => {
     <Container fluid className='main-page'>
         <Header />
       <Container>
-      <div style={{marginTop:30}}>
+      <div style={{marginTop:30}} className="videos">
       <QrReader 
       constraints={{
         facingMode: 'environment'
@@ -49,7 +56,7 @@ const Scanner = (props) => {
         style={{ width: '100%' }}
       />
             </div> 
-            <p>{JSON.stringify(Data)}</p>
+            {/* <p>{JSON.stringify(Data)}</p> */}
       </Container>
     </Container>
   );

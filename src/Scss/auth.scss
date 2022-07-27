@@ -41,6 +41,22 @@
                         text-decoration: none;
                     }
                 }
+                div p{
+                    margin-bottom: 0;
+                    color: $TextParagraph;
+                }
+                label{ 
+                    color: #434343;
+                }
+                .form-check-input:checked[type=radio]{
+                    background-color: $HighlightPriamry;
+                    border-color: $HighlightPriamry;
+                    background-image: none;
+                    &:focus{
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
             }
         }
     }

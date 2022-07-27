@@ -6,7 +6,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 const Result = (props) => { 
     const location = useLocation();
     const navigate = useNavigate();
-    
+    localStorage.clear();
+    sessionStorage.clear();
     const body = !!location.state.body ? location.state.body : location.state.result;
     const dataFinal = body;
     const handleTest = () => {
@@ -46,19 +47,20 @@ const Result = (props) => {
                   {dataFinal.time_of_test.split(',')[0]}</h3>
            </div>
            </div>
-           <div className='test-button'>
+           <div className='test-button d-none'>
                 <ComButton Name='Click to test again'onClick={handleTest} ></ComButton>
            </div>
            </> : <>
            <div className='badges'>
            <Image width="100%" className='w-100' src={`${process.env.PUBLIC_URL}/doctor.jpg`} />
            <h4 className='bg-error'>Sorry, you did not pass</h4>
-            <p>Unfortunately, you did not pass the <br />
-            Corowell-Test
+            <p>Unfortunately you did not pass the <br />
+            COVID-19 Symptom Screening Test
             </p>
             <p>This could be an indication of a<br />
             COVID-19 infection.
             </p>
+<p> Please go get a confirmatory test to verify infection</p>
            </div>
            </>
           }
