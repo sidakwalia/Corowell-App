@@ -1,0 +1,83 @@
+.dashboard{
+    h3,p{
+        color: #3d3d3d;
+    }
+    table{
+        font-weight: 500;
+        span.pass{
+            display: flex;
+            align-items: center;
+            background-color: $HighlightPriamry;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin: auto;
+        }
+        span.fail{
+            display: flex;
+            align-items: center;
+            background-color: #dc3545;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin: auto;
+        }
+    } button{
+        min-width:200px;
+        height: 40px;
+        background-color: $HighlightPriamry;
+        color: #fff;
+        border: none;
+        border-radius: 25px;
+        margin-top: 1.4rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    button:disabled{
+        opacity: .5;
+        background-color: $BorderPrimary;
+    }
+    h5{
+        margin-bottom: 1.4rem;
+        padding: 0 1rem;
+    }
+    .questions{
+        p{ 
+            margin-bottom: 0;
+            padding: 0 1rem;
+            font-size: 18px;
+            color: $TextParagraph;
+            }
+            .form-check-inline{
+                padding-left: 1rem;
+                input{
+                    display: none; 
+                }
+                label{
+                    border:2px solid $HighlightSecondary;
+                    width: 100px;
+                    height: 42px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 25px;
+                    font-weight: 500;
+                }
+                .form-check-input:checked[type=radio]{
+                    & ~ label{
+                        background-color: $HighlightSecondary;
+                        color: #fff;
+                    }
+                }
+                &.invert{
+                    label{
+                        
+                    }
+                }
+            }
+            button{
+                width: 100%;
+            }
+    }
+    
+}

@@ -6,7 +6,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 const Result = (props) => { 
     const location = useLocation();
     const navigate = useNavigate();
-    
+    localStorage.clear();
+    sessionStorage.clear();
     const body = !!location.state.body ? location.state.body : location.state.result;
     const dataFinal = body;
     const handleTest = () => {
@@ -46,7 +47,7 @@ const Result = (props) => {
                   {dataFinal.time_of_test.split(',')[0]}</h3>
            </div>
            </div>
-           <div className='test-button'>
+           <div className='test-button d-none'>
                 <ComButton Name='Click to test again'onClick={handleTest} ></ComButton>
            </div>
            </> : <>
