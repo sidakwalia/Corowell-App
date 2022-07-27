@@ -56,7 +56,7 @@ const Scanner = (props) => {
         style={{ width: '100%' }}
       />
             </div> 
-            {/* <p>{JSON.stringify(Data)}</p> */}
+            {/* <p>{JSON.stringify(Data)}</p> */}           
       </Container>
     </Container>
   );

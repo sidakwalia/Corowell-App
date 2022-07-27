@@ -52,7 +52,11 @@ const Result = (props) => {
            </div>
            </> : <>
            <div className='badges'>
-           <Image width="100%" className='w-100' src={`${process.env.PUBLIC_URL}/doctor.jpg`} />
+
+
+            <Image width="100%" className='w-100' src={`${process.env.PUBLIC_URL}/doctor.jpg`} />
+
+           
            <h4 className='bg-error'>Sorry, you did not pass</h4>
             <p>Unfortunately you did not pass the <br />
             COVID-19 Symptom Screening Test
