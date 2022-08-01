@@ -66,7 +66,7 @@ const Register = () => {
       case 'Age':
       return setAge(i => ({ ...i, Value: value, IsError: false, ErrorMessage: '' }))
       case 'Ethnicity':
-      return setEthnicity(i => ({ ...i, Value: value, IsError: false, ErrorMessage: '' }))
+      return setEthnicity(value)
       case 'GroupNo':
       return setGroupNo(i => ({ ...i, Value: value, IsError: false, ErrorMessage: '' }))
       case 'Lung':
@@ -88,7 +88,7 @@ const Register = () => {
     }
   }
   
-  console.log(!InsuranceCarrier)
+  console.log(Ethnicity)
   // Form Steps
   const handleStep = () => {
     if (CheckValidations([
@@ -132,7 +132,7 @@ const Register = () => {
         insurance_comp : InsuranceCompany.Value,
         insurance_number : InsuranceNumber.Value,
         age : Age.Value,
-        ethinicity : Ethnicity.Value,
+        ethinicity : Ethnicity,
         gender : Gender,
         smoking_status : SmokingStatus,
         group_id : GroupNo.Value,
@@ -264,8 +264,8 @@ const Register = () => {
         <Form.Group className="mb-3">
         <Form.Label>Ethnicity</Form.Label>
         <Form.Select aria-label="Default select example" name="Ethnicity" defaultValue={Ethnicity} onChange={(e) => HandleFormChange(e)} >
-        <option selected disabled>Select</option>
-        <option value="white">White</option>
+        <option  disabled>Select</option>
+        <option selected value="white">White</option>
         <option value="Mixed / Multiple ethnic groups">Mixed / Multiple ethnic groups</option>
         <option value="Asian / Asian British">Asian / Asian British</option>
         <option value="Black / African / Caribbean / Black British">Black / African / Caribbean / Black British</option>
