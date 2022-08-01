@@ -9,7 +9,7 @@ import { CheckResponseWM } from '../../Helpers/CheckResponse';
 const Scanner = (props) => { 
     const location = useLocation();
     const navigate = useNavigate();
-    console.log(location);
+  
     const symptoms = JSON.parse(!!sessionStorage.symptoms ? sessionStorage.symptoms : null);
     const UserInfo = JSON.parse(!!sessionStorage.result ? sessionStorage.result : null);
     const [Data, setData] = useState({});
@@ -18,7 +18,6 @@ const Scanner = (props) => {
              setData(data)
              let body = JSON.parse(JSON.stringify(eval("(" + data + ")"))); 
              let bodyString = JSON.stringify(body)
-             console.log(bodyString)            
              postData(`${urls.SetScentApi}`,bodyString).then((result) => {    
               if (!!result) {  
                 if(result.message == "Network Error") {

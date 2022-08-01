@@ -13,7 +13,6 @@ const Result = (props) => {
     const handleTest = () => {
         navigate('/scanner',{state:{body}}); 
     }
-    console.log(location.state.body )
   return (
     <Container fluid className='main-page'>
         <Header />

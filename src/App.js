@@ -9,7 +9,6 @@ import { LoginRequest } from './api';
 import { CheckResponseWM } from './Helpers/CheckResponse';
 import ConvertFormData from './Helpers/ConvertFormData';
 const App = (props) => {
-  console.log(props);
 
   const navigate = useNavigate();
 
@@ -51,7 +50,6 @@ const App = (props) => {
       }
           LoginRequest(urls.LoginApi, body).then((result) => {    
             if (CheckResponseWM(result)) {     
-              console.log(result)   
                   if (result.status_code == 200) {
                       // localStorage.setItem("user_name", JSON.stringify(UserName.Value));
                       localStorage.setItem("islogged", 'true'); 

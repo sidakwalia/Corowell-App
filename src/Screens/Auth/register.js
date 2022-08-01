@@ -25,7 +25,7 @@ const Register = () => {
   const [InsuranceNumber, setInsuranceNumber] = useState({ Value: '', IsError: false, ErrorMessage: '' });
   const [Age, setAge] = useState({ Value: 0, IsError: false, ErrorMessage: '' });
   const [GroupNo, setGroupNo] = useState({ Value: '', IsError: false, ErrorMessage: '' });
-  const [Ethnicity, setEthnicity] = useState('');
+  const [Ethnicity, setEthnicity] = useState("white");
   const [SmokingStatus, setSmokingStatus] = useState('');
   const [Lung, setLung] = useState('');
   const [Heart, setHeart] = useState('');
@@ -88,7 +88,6 @@ const Register = () => {
     }
   }
   
-  console.log(Ethnicity)
   // Form Steps
   const handleStep = () => {
     if (CheckValidations([
@@ -139,10 +138,8 @@ const Register = () => {
         affiliations : OrgName.Value,
         disease_details : disease
       }
-      console.log(body)
       RegisterRequest(urls.RegisterApi, body).then((result) => {            
         if (CheckResponseWM(result)) {
-          console.log(result);
           if (result.status_code == 200) { 
             localStorage.setItem("islogged", "true");
             sessionStorage.setItem("result",  JSON.stringify(result));

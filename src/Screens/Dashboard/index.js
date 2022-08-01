@@ -16,8 +16,6 @@ const Dashboard = (props) => {
  
   let Results = TestResults;
   
-  console.log(DashboardData)
-  console.log(Results.length)
   const [StepOne, setStepOne] = useState('')
   const [Cough, setCough] = useState('');
   const [Fever, setFever] = useState('');

@@ -24,7 +24,6 @@ const [fullscreen, setFullscreen] = useState(true);
 
 const surveyData = location.state.result;
 const ticketData = location.state.bodyString;
-console.log(DashboardData) 
     const [SurveyScent, setSurveyScent] = useState(true);
     const [ScentFeedback, setScentFeedback] = useState('')
     const [UserName, setUserName] = useState({ Value: '', IsError: false, ErrorMessage: '' })
@@ -51,8 +50,7 @@ console.log(DashboardData)
           case 'Terms1': return setTerms1(checked) 
           case 'Terms2': return setTerms2(checked) 
           case 'UserName':
-                return setUserName(i => ({ ...i, Value: value, IsError: false, ErrorMessage: '' }))
-          console.log(Qus1)
+                return setUserName(i => ({ ...i, Value: value, IsError: false, ErrorMessage: '' }))          
       } 
   } 
     const handleResult = () => {   
@@ -81,7 +79,6 @@ console.log(DashboardData)
         "email_id": Email
       };
 
-    console.log(dataResult);
       postData(urls.GenerateTestApi,dataResult).then((result) => {    
         if (CheckResponseWM(result)) {        
         if (result.status_code==200) {   
